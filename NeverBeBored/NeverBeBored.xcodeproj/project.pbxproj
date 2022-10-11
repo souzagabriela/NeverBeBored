@@ -15,6 +15,8 @@
 		5354949D28F4A0F6009EC0CB /* NeverBeBoredTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5354949C28F4A0F6009EC0CB /* NeverBeBoredTests.swift */; };
 		535494A728F4A0F6009EC0CB /* NeverBeBoredUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535494A628F4A0F6009EC0CB /* NeverBeBoredUITests.swift */; };
 		535494A928F4A0F6009EC0CB /* NeverBeBoredUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535494A828F4A0F6009EC0CB /* NeverBeBoredUITestsLaunchTests.swift */; };
+		535494BB28F5B0CB009EC0CB /* API Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535494BA28F5B0CB009EC0CB /* API Model.swift */; };
+		535494BE28F5B7FE009EC0CB /* EnumError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535494BD28F5B7FE009EC0CB /* EnumError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		535494A228F4A0F6009EC0CB /* NeverBeBoredUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeverBeBoredUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		535494A628F4A0F6009EC0CB /* NeverBeBoredUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeverBeBoredUITests.swift; sourceTree = "<group>"; };
 		535494A828F4A0F6009EC0CB /* NeverBeBoredUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeverBeBoredUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		535494BA28F5B0CB009EC0CB /* API Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API Model.swift"; sourceTree = "<group>"; };
+		535494BD28F5B7FE009EC0CB /* EnumError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +139,8 @@
 		535494B728F59708009EC0CB /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				535494BC28F5B7F1009EC0CB /* Enum */,
+				535494B928F5B0B6009EC0CB /* Model */,
 				5354948928F4A0F5009EC0CB /* ViewController.swift */,
 			);
 			path = Source;
@@ -146,6 +152,22 @@
 				5354948E28F4A0F6009EC0CB /* Assets.xcassets */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		535494B928F5B0B6009EC0CB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				535494BA28F5B0CB009EC0CB /* API Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		535494BC28F5B7F1009EC0CB /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				535494BD28F5B7FE009EC0CB /* EnumError.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +322,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5354948A28F4A0F5009EC0CB /* ViewController.swift in Sources */,
+				535494BB28F5B0CB009EC0CB /* API Model.swift in Sources */,
+				535494BE28F5B7FE009EC0CB /* EnumError.swift in Sources */,
 				5354948628F4A0F5009EC0CB /* AppDelegate.swift in Sources */,
 				5354948828F4A0F5009EC0CB /* SceneDelegate.swift in Sources */,
 			);
