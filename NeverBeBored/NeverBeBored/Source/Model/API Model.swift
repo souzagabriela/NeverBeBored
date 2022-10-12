@@ -14,4 +14,5 @@ struct BoredInfo: Codable {
     let price: Float
     let link: String
     let accessibility: Float
+    let key: String
 }
