@@ -12,15 +12,9 @@ protocol OnboardingScreenDelegate: AnyObject {
 }
 
 class OnboardingScreenView: UIView {
-    
+
     weak var delegate: OnboardingScreenDelegate?
-    
-//    private let stack: UIStackView = {
-//       let stack = UIStackView()
-//        stack.axis = .vertical
-//        stack.spacing = 40 // change if need letter
-//        return stack
-//    }()
+
     private let catImage: UIImageView = {
        let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -38,7 +32,7 @@ class OnboardingScreenView: UIView {
         card.layer.cornerRadius = 22
         return card
     }()
-    let label = make(UILabel()){
+    let label = make(UILabel()) {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.font = .systemFont(ofSize: 22, weight: .bold)
         $0.textAlignment = .center
@@ -50,7 +44,6 @@ class OnboardingScreenView: UIView {
         $0.configuration = .borderedProminent()
         $0.setTitle("Generate Activity", for: .normal)
         $0.backgroundColor = UIColor(named: "cardPink")
-//        $0.addTarget(self, action: #selector(action(sender:)), for: .primaryActionTriggered)
     
     }
 
@@ -64,20 +57,15 @@ class OnboardingScreenView: UIView {
         $0.configuration = .borderedTinted()
         $0.backgroundColor = UIColor(named: "cardOrange")
         $0.setTitle("Get started", for: .normal)
-        
     }
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = UIColor(named: "backgroundColor")
         buildLayout()
-        
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 //    @objc private func action(sender: UIButton) {
 //        delegate?.mainScreenView(self, didTapOnButton: sender)
 //        didTapOnButtonHandler?()
@@ -96,7 +84,6 @@ extension OnboardingScreenView: ViewCoding {
         self.addSubview(label)
 //        self.addSubview(buttonGetStarted)
     }
-    
     func setupConstraints() {
         NSLayoutConstraint.activate([
             catImage.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
@@ -113,9 +100,7 @@ extension OnboardingScreenView: ViewCoding {
             label.topAnchor.constraint(equalTo: cardView.topAnchor),
             label.bottomAnchor.constraint(equalTo: cardView.bottomAnchor),
             label.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 10),
-            label.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -10),
-            
-                        
+            label.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -10)
         ])
     }
 }

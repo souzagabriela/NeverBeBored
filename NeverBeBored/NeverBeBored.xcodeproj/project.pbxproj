@@ -23,7 +23,6 @@
 		536CDA3E28F8812000C3B698 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536CDA3D28F8812000C3B698 /* Utils.swift */; };
 		536CDA4028F9873700C3B698 /* OnboardingScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536CDA3F28F9873700C3B698 /* OnboardingScreenView.swift */; };
 		536CDA4228F990E800C3B698 /* OnboardingScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536CDA4128F990E800C3B698 /* OnboardingScreenModel.swift */; };
-		536CDA4C28FD8CE900C3B698 /* MainScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536CDA4B28FD8CE900C3B698 /* MainScreenController.swift */; };
 		536CDA4E28FD8CF200C3B698 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536CDA4D28FD8CF200C3B698 /* MainScreenView.swift */; };
 		536CDA5028FD8CFE00C3B698 /* MainScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536CDA4F28FD8CFE00C3B698 /* MainScreenModel.swift */; };
 /* End PBXBuildFile section */
@@ -398,7 +397,6 @@
 			files = (
 				536CDA3928F8804C00C3B698 /* MainScreenController.swift in Sources */,
 				536CDA4028F9873700C3B698 /* OnboardingScreenView.swift in Sources */,
-				536CDA4C28FD8CE900C3B698 /* MainScreenController.swift in Sources */,
 				5354948A28F4A0F5009EC0CB /* ApiViewController.swift in Sources */,
 				535494BB28F5B0CB009EC0CB /* APIModel.swift in Sources */,
 				535494D128F69F2C009EC0CB /* ViewCoding.swift in Sources */,
