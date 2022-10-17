@@ -7,6 +7,13 @@
 
 import Foundation
 
+struct BoredModel: Codable {
+    let bored: BoredInfo?
+    init(bored: BoredInfo?) {
+        self.bored = bored
+    }
+}
+
 struct BoredInfo: Codable {
     let activity: String
     let type: String
