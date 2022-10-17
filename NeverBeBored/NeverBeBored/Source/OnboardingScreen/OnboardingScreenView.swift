@@ -40,23 +40,16 @@ class OnboardingScreenView: UIView {
         $0.textColor = .black
     }
 
-    lazy var buttonDoIt = make(UIButton()) {
-        $0.configuration = .borderedProminent()
-        $0.setTitle("Generate Activity", for: .normal)
-        $0.backgroundColor = UIColor(named: "cardPink")
-    
-    }
-
-    lazy var buttonCategories = make(UIButton()) {
-        $0.configuration = .borderedProminent()
-        $0.setTitle("Categories", for: .normal)
-        $0.backgroundColor = UIColor(named: "cardOrange")
-    }
-
     lazy var buttonGetStarted = make(UIButton()) {
-        $0.configuration = .borderedTinted()
+//        $0.configuration = .borderedTinted()
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.titleLabel?.textColor = .white
+        $0.layer.cornerRadius = 10
+        $0.layer.shadowColor = UIColor.black.cgColor
+        $0.layer.shadowRadius = 10
         $0.backgroundColor = UIColor(named: "cardOrange")
         $0.setTitle("Get started", for: .normal)
+        $0.addTarget(self, action: #selector(buttonClickedOnce(_ :)), for: .primaryActionTriggered)
     }
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -66,10 +59,9 @@ class OnboardingScreenView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-//    @objc private func action(sender: UIButton) {
-//        delegate?.mainScreenView(self, didTapOnButton: sender)
-//        didTapOnButtonHandler?()
-//    }
+    @objc func buttonClickedOnce(_: UIButton) {
+        print("testandooooo!")
+    }
 }
 
 extension OnboardingScreenView: ViewCoding {
@@ -82,7 +74,7 @@ extension OnboardingScreenView: ViewCoding {
         self.addSubview(catImage)
         self.addSubview(cardView)
         self.addSubview(label)
-//        self.addSubview(buttonGetStarted)
+        self.addSubview(buttonGetStarted)
     }
     func setupConstraints() {
         NSLayoutConstraint.activate([
@@ -100,7 +92,13 @@ extension OnboardingScreenView: ViewCoding {
             label.topAnchor.constraint(equalTo: cardView.topAnchor),
             label.bottomAnchor.constraint(equalTo: cardView.bottomAnchor),
             label.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 10),
-            label.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -10)
+            label.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -10),
+            
+            buttonGetStarted.topAnchor.constraint(equalTo: self.centerYAnchor, constant: 100),
+            buttonGetStarted.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            buttonGetStarted.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            buttonGetStarted.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.08),
+            buttonGetStarted.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.55)
         ])
     }
 }
