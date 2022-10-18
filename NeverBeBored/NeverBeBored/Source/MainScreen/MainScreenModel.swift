@@ -8,7 +8,7 @@
 import Foundation
 
 struct MainScreenModel {
-//    var randomActivity: [BoredInfo] = []
-    var randomActivity: [BoredInfo] = []
-    var randomAction = "apenas testando pra ver se finalmente essa merda dá certo"
+    var activities: [BoredInfo] = []
+    var infoActivities = "Activity information:"
 }
+

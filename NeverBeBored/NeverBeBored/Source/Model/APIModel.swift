@@ -22,8 +22,16 @@ struct BoredInfo: Codable {
     let link: String
     let accessibility: Float
     let key: String
-    
-    init(activity: String, type: String, participants: Int, price: Float, link: String, accessibility: Float, key: String) {
+
+    init(
+        activity: String,
+        type: String,
+        participants: Int,
+        price: Float,
+        link: String,
+        accessibility: Float,
+        key: String) {
+            
         self.activity = activity
         self.type = type
         self.participants = participants

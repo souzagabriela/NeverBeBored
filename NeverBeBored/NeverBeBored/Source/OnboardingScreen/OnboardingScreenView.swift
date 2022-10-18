@@ -49,7 +49,7 @@ class OnboardingScreenView: UIView {
         $0.layer.shadowRadius = 10
         $0.backgroundColor = UIColor(named: "cardOrange")
         $0.setTitle("Get started", for: .normal)
-        $0.addTarget(self, action: #selector(buttonClickedOnce(_ :)), for: .primaryActionTriggered)
+        $0.addTarget(self, action: #selector(buttonStarted(_ :)), for: .primaryActionTriggered)
     }
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -59,8 +59,10 @@ class OnboardingScreenView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    @objc func buttonClickedOnce(_: UIButton) {
-        print("testandooooo!")
+    @objc func buttonStarted(_: UIButton) {
+        let rootMain = MainScreenController()
+        let navigationOnboarding = UINavigationController(rootViewController: rootMain)
+
     }
 }
 
@@ -91,7 +93,7 @@ extension OnboardingScreenView: ViewCoding {
 
             label.topAnchor.constraint(equalTo: cardView.topAnchor),
             label.bottomAnchor.constraint(equalTo: cardView.bottomAnchor),
-            label.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 10),
+            label.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 20),
             label.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -10),
             
             buttonGetStarted.topAnchor.constraint(equalTo: self.centerYAnchor, constant: 100),
