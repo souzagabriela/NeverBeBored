@@ -7,11 +7,6 @@
 
 import Foundation
 
-// MARK: - Structure to write a function to call the api and decode using codable (at model) in a generic way
-struct Url {
-   static let baseUrl = URL(string: "https://www.boredapi.com/api/activity/")
-}
-
 // MARK: - Creating an extension of an object URLSession to make a func request. Every request need to receive an URL.
 // MARK: - To this request I pass a generic type of reponse so I can a different response based on the api I'm calling
 
@@ -35,9 +30,10 @@ extension URLSession {
                 }
                 do {
                     let result = try JSONDecoder().decode(expecting, from: data)
-                    completion(.success(result))
-                }
+                    print(result)
+                    completion(.success(result))}
                 catch {
+                    print(error)
                     completion(.failure(error))
                 }
             }

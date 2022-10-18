@@ -14,10 +14,8 @@ class ApiViewController: UIViewController {
         table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         return table
     }()
-    
     // MARK: - viewModel
     private var bored: [BoredInfo] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(table)
@@ -47,11 +45,9 @@ class ApiViewController: UIViewController {
             title: "Error",
             message: "Something is wrong!",
             preferredStyle: .alert)
-        
         alertController.addAction(.init(title: "OK", style: .default))
         present(alertController, animated: true)
     }
-    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         table.frame = view.bounds
@@ -61,6 +57,7 @@ class ApiViewController: UIViewController {
 
 extension ApiViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        print(bored) 
         return bored.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
