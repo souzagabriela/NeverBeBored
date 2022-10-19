@@ -25,6 +25,7 @@ class MainScreenController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.title = "Activities"
         fetch()
     }
     func fetch() {

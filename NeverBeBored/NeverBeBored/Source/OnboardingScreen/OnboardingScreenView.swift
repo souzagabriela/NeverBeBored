@@ -7,13 +7,14 @@
 
 import UIKit
 
-protocol OnboardingScreenDelegate: AnyObject {
-    func onboardingScreenView(_ mainScreenView: OnboardingScreenView, didTapOnButton button: UIButton)
-}
+//protocol OnboardingScreenDelegate: AnyObject {
+//    func onboardingScreenView(_ mainScreenView: OnboardingScreenView, didTapOnButton button: UIButton)
+//}
 
 class OnboardingScreenView: UIView {
 
-    weak var delegate: OnboardingScreenDelegate?
+    var didTapOnButton: (() -> Void)?
+//    weak var delegate: OnboardingScreenDelegate?
 
     private let catImage: UIImageView = {
        let image = UIImageView()
@@ -60,9 +61,10 @@ class OnboardingScreenView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     @objc func buttonStarted(_: UIButton) {
-        let rootMain = MainScreenController()
-        let navigationOnboarding = UINavigationController(rootViewController: rootMain)
-
+        didTapOnButton?()
+//        let rootMain = OnboradingViewController()
+//        let navigationOnboarding = UINavigationController(rootViewController: rootMain)
+//        navigationOnboarding.pushViewController(MainScreenController(), animated: true)
     }
 }
 
@@ -71,7 +73,6 @@ extension OnboardingScreenView: ViewCoding {
         backgroundColor = .white
 
     }
-    
     func setupHierarchy() {
         self.addSubview(catImage)
         self.addSubview(cardView)

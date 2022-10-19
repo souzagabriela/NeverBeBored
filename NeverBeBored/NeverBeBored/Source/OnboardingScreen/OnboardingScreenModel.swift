@@ -6,7 +6,9 @@
 //
 
 import Foundation
+import UIKit
 
 struct OnboardingScreenModel {
     var textMainScreen = "Are you bored today? No problem at all. Here you'll find the exactly thing to do. Click in the button below and see the magic happens."
 }
+
