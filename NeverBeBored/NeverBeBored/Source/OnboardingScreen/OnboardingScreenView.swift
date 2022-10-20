@@ -60,11 +60,9 @@ class OnboardingScreenView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     @objc func buttonStarted(_: UIButton) {
         didTapOnButton?()
-//        let rootMain = OnboradingViewController()
-//        let navigationOnboarding = UINavigationController(rootViewController: rootMain)
-//        navigationOnboarding.pushViewController(MainScreenController(), animated: true)
     }
 }
 

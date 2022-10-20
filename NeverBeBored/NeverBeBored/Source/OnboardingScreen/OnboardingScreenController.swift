@@ -23,8 +23,7 @@ class OnboradingViewController: UIViewController {
         onboardingScreenView.label.text = onboardingScreenModel.textMainScreen.description
         onboardingScreenView.didTapOnButton = { [weak self] in
             print("ir pra outra tela")
-            let navigation = UINavigationController(rootViewController: MainScreenController())
-            self?.present(navigation, animated: true)
+            self?.navigationController?.pushViewController(MainScreenController(), animated: true)
         }
     }
 }

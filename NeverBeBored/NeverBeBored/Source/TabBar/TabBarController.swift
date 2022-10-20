@@ -11,7 +11,7 @@ class TabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tabBar.backgroundColor = .white
+        tabBar.backgroundColor = UIColor(named: "backgroundColor")
         
         let viewOne = UINavigationController(rootViewController: MainScreenController())
         let viewTwo = UINavigationController(rootViewController: FavoritesController())
@@ -28,7 +28,7 @@ class TabBarController: UITabBarController {
         tabBar.tintColor = .black
         
         setViewControllers([viewOne, viewTwo], animated: false)
-        selectedIndex = 1
+        selectedIndex = 0
     }
     
 }

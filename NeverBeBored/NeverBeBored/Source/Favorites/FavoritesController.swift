@@ -8,8 +8,11 @@
 import UIKit
 
 class FavoritesController: UIViewController {
-    override func viewDidLoad() {
-    super.viewDidLoad()
-        title = "Favorites activites"
+    
+    let favoritesView = FavoritesView()
+    
+    override func loadView() {
+        title = "Favorites"
+        view = favoritesView
     }
 }
