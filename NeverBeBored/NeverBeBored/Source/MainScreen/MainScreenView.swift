@@ -34,6 +34,12 @@ class MainScreenView: UIView {
         $0.contentMode = .scaleAspectFit
     }
 
+    let image = make(UIImageView()) {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.image = UIImage(named: "MessageBubble2")
+        $0.contentMode = .scaleAspectFit
+    }
+
     let catImage = make(UIImageView()) {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.image = UIImage(named: "catTwo")
@@ -166,6 +172,7 @@ extension MainScreenView: ViewCoding {
     }
 
     func setupHierarchy() {
+        self.addSubview(image)
         self.addSubview(catImage)
         self.addSubview(card)
         self.addSubview(labelActivity)
@@ -178,6 +185,11 @@ extension MainScreenView: ViewCoding {
 
     func setupConstraints() {
         NSLayoutConstraint.activate([
+
+            image.bottomAnchor.constraint(equalTo: card.topAnchor, constant: -120),
+            image.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            image.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 200),
+
             catImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 50),
             catImage.bottomAnchor.constraint(equalTo: card.topAnchor),
             catImage.leadingAnchor.constraint(equalTo: self.leadingAnchor),

@@ -22,6 +22,12 @@ class OnboardingScreenView: UIView {
         $0.contentMode = .scaleAspectFit
     }
 
+    let image = make(UIImageView()) {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.image = UIImage(named: "MessageBubble1")
+        $0.contentMode = .scaleAspectFit
+    }
+
     private let catImage: UIImageView = {
        let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -66,7 +72,7 @@ class OnboardingScreenView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     @objc func buttonStarted(_: UIButton) {
         didTapOnButton?()
     }
@@ -78,6 +84,7 @@ extension OnboardingScreenView: ViewCoding {
 
     }
     func setupHierarchy() {
+        self.addSubview(image)
         self.addSubview(catImage)
         self.addSubview(cardView)
         self.addSubview(label)
@@ -85,6 +92,11 @@ extension OnboardingScreenView: ViewCoding {
     }
     func setupConstraints() {
         NSLayoutConstraint.activate([
+
+            image.bottomAnchor.constraint(equalTo: cardView.topAnchor, constant: -120),
+            image.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
+            image.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 210),
+
             catImage.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
             catImage.bottomAnchor.constraint(equalTo: self.centerYAnchor, constant: -180),
             catImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: -100),
