@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import UIKit
 
 struct MainScreenModel {
     var activities: [BoredInfo] = []
     var infoActivities = "Activity information:"
+    var infoFilters = "How about to filter the activities?"
 }
 

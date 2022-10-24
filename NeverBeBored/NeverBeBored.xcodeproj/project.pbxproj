@@ -26,6 +26,8 @@
 		536CDA4E28FD8CF200C3B698 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536CDA4D28FD8CF200C3B698 /* MainScreenView.swift */; };
 		536CDA5028FD8CFE00C3B698 /* MainScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536CDA4F28FD8CFE00C3B698 /* MainScreenModel.swift */; };
 		536CDA5228FDA3DA00C3B698 /* MainScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536CDA5128FDA3DA00C3B698 /* MainScreenController.swift */; };
+		53E9C205290026A800131473 /* FavoritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9C204290026A800131473 /* FavoritesController.swift */; };
+		53E9C20729006E9400131473 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9C20629006E9400131473 /* FavoritesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		536CDA4D28FD8CF200C3B698 /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
 		536CDA4F28FD8CFE00C3B698 /* MainScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenModel.swift; sourceTree = "<group>"; };
 		536CDA5128FDA3DA00C3B698 /* MainScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenController.swift; sourceTree = "<group>"; };
+		53E9C204290026A800131473 /* FavoritesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesController.swift; sourceTree = "<group>"; };
+		53E9C20629006E9400131473 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,13 +161,14 @@
 		535494B728F59708009EC0CB /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				536CDA4A28FD8CB800C3B698 /* MainScreen */,
-				536CDA3C28F880DA00C3B698 /* Utils */,
-				536CDA3428F8800500C3B698 /* OnboardingScreen */,
-				535494BF28F5DCA4009EC0CB /* Service */,
 				535494BC28F5B7F1009EC0CB /* Enum */,
-				535494B928F5B0B6009EC0CB /* Model */,
 				535494CF28F69F0E009EC0CB /* Protocol */,
+				536CDA3C28F880DA00C3B698 /* Utils */,
+				535494B928F5B0B6009EC0CB /* Model */,
+				535494BF28F5DCA4009EC0CB /* Service */,
+				53E9C2032900269800131473 /* Favorites */,
+				536CDA4A28FD8CB800C3B698 /* MainScreen */,
+				536CDA3428F8800500C3B698 /* OnboardingScreen */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -251,6 +256,15 @@
 			children = (
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		53E9C2032900269800131473 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				53E9C204290026A800131473 /* FavoritesController.swift */,
+				53E9C20629006E9400131473 /* FavoritesView.swift */,
+			);
+			path = Favorites;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -414,7 +428,9 @@
 				536CDA5028FD8CFE00C3B698 /* MainScreenModel.swift in Sources */,
 				536CDA3E28F8812000C3B698 /* Utils.swift in Sources */,
 				5354948628F4A0F5009EC0CB /* AppDelegate.swift in Sources */,
+				53E9C205290026A800131473 /* FavoritesController.swift in Sources */,
 				536CDA5228FDA3DA00C3B698 /* MainScreenController.swift in Sources */,
+				53E9C20729006E9400131473 /* FavoritesView.swift in Sources */,
 				536CDA4228F990E800C3B698 /* OnboardingScreenModel.swift in Sources */,
 				5354948828F4A0F5009EC0CB /* SceneDelegate.swift in Sources */,
 				536CDA4E28FD8CF200C3B698 /* MainScreenView.swift in Sources */,

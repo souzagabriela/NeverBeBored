@@ -21,5 +21,9 @@ class OnboradingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         onboardingScreenView.label.text = onboardingScreenModel.textMainScreen.description
+        onboardingScreenView.didTapOnButton = { [weak self] in
+            print("ir pra outra tela")
+            self?.navigationController?.pushViewController(MainScreenController(), animated: true)
+        }
     }
 }

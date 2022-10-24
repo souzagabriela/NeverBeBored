@@ -7,13 +7,26 @@
 
 import UIKit
 
-protocol OnboardingScreenDelegate: AnyObject {
-    func onboardingScreenView(_ mainScreenView: OnboardingScreenView, didTapOnButton button: UIButton)
-}
+//protocol OnboardingScreenDelegate: AnyObject {
+//    func onboardingScreenView(_ mainScreenView: OnboardingScreenView, didTapOnButton button: UIButton)
+//}
 
 class OnboardingScreenView: UIView {
 
-    weak var delegate: OnboardingScreenDelegate?
+    var didTapOnButton: (() -> Void)?
+//    weak var delegate: OnboardingScreenDelegate?
+
+    let background = make(UIImageView()) {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.image = UIImage(named: "backgroundImage")
+        $0.contentMode = .scaleAspectFit
+    }
+
+    let image = make(UIImageView()) {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.image = UIImage(named: "MessageBubble1")
+        $0.contentMode = .scaleAspectFit
+    }
 
     private let catImage: UIImageView = {
        let image = UIImageView()
@@ -59,20 +72,19 @@ class OnboardingScreenView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    @objc func buttonStarted(_: UIButton) {
-        let rootMain = MainScreenController()
-        let navigationOnboarding = UINavigationController(rootViewController: rootMain)
 
+    @objc func buttonStarted(_: UIButton) {
+        didTapOnButton?()
     }
 }
 
 extension OnboardingScreenView: ViewCoding {
     func setupView() {
-        backgroundColor = .white
+        addSubview(background)
 
     }
-    
     func setupHierarchy() {
+        self.addSubview(image)
         self.addSubview(catImage)
         self.addSubview(cardView)
         self.addSubview(label)
@@ -80,13 +92,17 @@ extension OnboardingScreenView: ViewCoding {
     }
     func setupConstraints() {
         NSLayoutConstraint.activate([
+
+            image.bottomAnchor.constraint(equalTo: cardView.topAnchor, constant: -120),
+            image.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
+            image.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 210),
+
             catImage.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
             catImage.bottomAnchor.constraint(equalTo: self.centerYAnchor, constant: -180),
             catImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: -100),
             catImage.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            
+
             cardView.topAnchor.constraint(equalTo: catImage.topAnchor, constant: 180),
-            cardView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor),
             cardView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.25),
             cardView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.85),
             cardView.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
@@ -95,12 +111,11 @@ extension OnboardingScreenView: ViewCoding {
             label.bottomAnchor.constraint(equalTo: cardView.bottomAnchor),
             label.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 20),
             label.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -10),
-            
+
             buttonGetStarted.topAnchor.constraint(equalTo: self.centerYAnchor, constant: 100),
             buttonGetStarted.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            buttonGetStarted.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            buttonGetStarted.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.08),
-            buttonGetStarted.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.55)
+            buttonGetStarted.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.05),
+            buttonGetStarted.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.40)
         ])
     }
 }

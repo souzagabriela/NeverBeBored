@@ -40,4 +40,10 @@ struct BoredInfo: Codable {
         self.accessibility = accessibility
         self.key = key
     }
+    
+    // MARK: - Convertendo participantes de Int para String para poder aparecer na UIView
+    func convertParticipants() -> String {
+        let participants = String(participants)
+        return participants
+    }
 }
